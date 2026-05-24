@@ -43,7 +43,7 @@ const milestones: Milestone[] = [
   },
   {
     year: "2025",
-    title: "SBC Code Class — Second Runner Up",
+    title: "SDC Code Clash — Second Runner Up",
     subtitle: "10-Week DSA Competition · Student Developers Cell",
     Icon: Trophy,
     accent: "oklch(0.78 0.18 90)",
@@ -75,7 +75,7 @@ const milestones: Milestone[] = [
   },
   {
     year: "2026",
-    title: "L&T KreaTech 2026",
+    title: "L&T CreaTech 2026",
     subtitle: "Participation",
     Icon: Sparkles,
     accent: "oklch(0.7 0.25 330)",
