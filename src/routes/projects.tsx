@@ -31,6 +31,15 @@ const projects = [
     description:
       "A responsive, production-grade Spotify-inspired web app featuring core music playback capabilities and interactive UI controls.",
   },
+  {
+    n: "03",
+    title: "AIRank — AI Tool Optimal Output Prediction System",
+    link: "https://github.com/Vishnunair585/AI-Rank",
+    year: "2026",
+    tags: "Python · Linear Regression · Machine Learning",
+    description:
+      "Predictive system using linear regression to optimize AI tool output quality and performance metrics.",
+  },
 ];
 
 function Projects() {
