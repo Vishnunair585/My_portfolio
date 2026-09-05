@@ -17,7 +17,7 @@ export function Navbar() {
     <>
       <header className="fixed left-0 right-0 top-0 z-40 mix-blend-difference">
         <div className="flex items-center justify-between px-6 py-6 md:px-12 md:py-8">
-          <Link to="/" className="display text-sm font-bold tracking-[0.3em] text-white">
+          <Link to="/" className="display nav-name-particles text-sm font-bold tracking-[0.3em] text-white">
             VISHNU<span className="text-accent">.</span>M
           </Link>
           <div className="flex items-center gap-5">

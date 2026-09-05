@@ -91,7 +91,7 @@ const milestones: Milestone[] = [
   },
 ];
 
-function About() {
+export function About() {
   const trackRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: trackRef,

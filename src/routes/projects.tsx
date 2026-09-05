@@ -42,7 +42,7 @@ const projects = [
   },
 ];
 
-function Projects() {
+export function Projects() {
   return (
     <PageTransition>
       <section className="px-6 pb-20 pt-40 md:px-12 md:pt-48">

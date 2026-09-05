@@ -97,7 +97,7 @@ const skills = [
   { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
 ];
 
-function Achievements() {
+export function Achievements() {
   return (
     <PageTransition>
         <section className="px-6 pb-16 pt-40 md:px-12 md:pt-48">

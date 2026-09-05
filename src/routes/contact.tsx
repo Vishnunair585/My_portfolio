@@ -19,7 +19,7 @@ const socials = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/vishnu585" },
 ];
 
-function Contact() {
+export function Contact() {
   return (
     <PageTransition>
       <section className="flex min-h-screen flex-col justify-between px-6 pb-12 pt-40 md:px-12 md:pt-48">
