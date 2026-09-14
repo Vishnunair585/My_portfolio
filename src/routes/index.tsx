@@ -9,7 +9,6 @@ import { Projects } from "@/routes/projects";
 import { Achievements } from "@/routes/achievements";
 import { Contact } from "@/routes/contact";
 import { InteractiveParticles } from "@/components/InteractiveParticles";
-import particleSource from "@/assets/particle-subject.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -91,7 +90,7 @@ function Home() {
           transition={{ delay: 0.55, duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
           className="relative h-[min(85vh,800px)] min-h-[500px] w-full overflow-hidden scale-[1.15] translate-x-20 -translate-y-32"
         >
-          <InteractiveParticles src={particleSource} maxDimension={750} size={1.8} className="absolute inset-0 max-h-[85vh]" />
+          <InteractiveParticles src="/particle-subject.png" maxDimension={750} size={1.8} className="absolute inset-0 max-h-[85vh]" />
         </motion.div>
       </section>
 
