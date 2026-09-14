@@ -2,8 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { PageTransition } from "@/components/PageTransition";
+import { DiaTextReveal } from "@/components/ui/DiaTextReveal";
 import { GraduationCap, Trophy, Award, Code2, Briefcase, Rocket, Brain, Sparkles } from "lucide-react";
 import vishnuImg from "@/assets/vishnu.jpeg";
+import { CreepyButton } from "@/components/CreepyButton";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -111,25 +113,25 @@ export function About() {
               I&rsquo;m Vishnu — born in Kerala, raised in Tamil Nadu, and driven by curiosity for technology and creativity.
             </h1>
             
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
               className="mt-8 text-base leading-relaxed text-muted-foreground md:text-lg"
             >
-              I enjoy building digital experiences, solving problems, and turning ideas into real projects through code.
-            </motion.p>
+              <DiaTextReveal text="I enjoy building digital experiences, solving problems, and turning ideas into real projects through code." />
+            </motion.div>
 
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg"
             >
-              Nothing beats the satisfaction of debugging for hours and finally seeing that 'Accepted' message on the screen.
-            </motion.p>
+              <DiaTextReveal text="Nothing beats the satisfaction of debugging for hours and finally seeing that 'Accepted' message on the screen." />
+            </motion.div>
           </div>
 
           {/* Photo - Right side */}
@@ -180,7 +182,7 @@ export function About() {
               const Icon = m.Icon;
               const isLeft = i % 2 === 0;
               return (
-                <li key={i} className="relative">
+                <li key={i} className={`relative`}>
                   <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -192,7 +194,7 @@ export function About() {
                     <div className="absolute left-6 -translate-x-1/2 md:left-1/2">
                       <motion.div
                         whileHover={{ scale: 1.25 }}
-                        className="relative flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-background/90 backdrop-blur transition-shadow"
+                        className="relative flex h-14 w-14 items-center justify-center rounded-full border-2 border-primary/40 dark:border-primary/60 bg-background/90 backdrop-blur transition-shadow"
                         style={{ boxShadow: `0 0 30px -4px ${m.accent}` }}
                       >
                         <Icon className="h-5 w-5" style={{ color: m.accent }} />
@@ -230,14 +232,14 @@ export function About() {
                           </div>
                         )}
                         {m.certificate && (
-                          <a
-                            href={m.certificate}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="mt-6 inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.06] px-4 py-3 text-xs uppercase tracking-[0.25em] text-foreground transition-colors hover:border-accent hover:bg-accent/10 hover:text-accent"
+                          <CreepyButton
+                            type="button"
+                            className="mt-6"
+                            coverClassName="bg-accent text-[10px] uppercase tracking-[0.25em]"
+                            onClick={() => window.open(m.certificate, "_blank", "noopener,noreferrer")}
                           >
                             View Certificate
-                          </a>
+                          </CreepyButton>
                         )}
                       </motion.div>
                     </div>

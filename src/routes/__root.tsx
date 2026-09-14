@@ -16,6 +16,7 @@ import { CursorGlow } from "@/components/CursorGlow";
 import { ClickSound } from "@/components/ClickSound";
 import { CDMusicPlayer } from "@/components/CDMusicPlayer";
 import { ThemeParticles } from "@/components/ThemeParticles";
+import { Preloader } from "@/components/Preloader";
 
 function NotFoundComponent() {
   return (
@@ -98,6 +99,7 @@ function RootComponent() {
       <ClickSound />
       <CDMusicPlayer />
       <div className="noise-overlay" />
+      <Preloader />
       <Navbar />
       <main className="relative z-10">
         <Outlet />

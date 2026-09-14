@@ -3,7 +3,11 @@ import Lenis from "lenis";
 
 export function SmoothScroll() {
   useEffect(() => {
-    const lenis = new Lenis({ duration: 1.2, smoothWheel: true });
+    const lenis = new Lenis({
+      duration: 1.2,
+      smoothWheel: true,
+      autoRaf: false,
+    });
     let raf: number;
     const tick = (t: number) => {
       lenis.raf(t);

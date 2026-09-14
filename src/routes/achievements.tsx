@@ -27,6 +27,7 @@ import {
 import { FaJava, FaCode, FaChartBar } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 import { ExternalLink } from "lucide-react";
+import { MaskedAvatars } from "@/components/MaskedAvatars";
 
 export const Route = createFileRoute("/achievements")({
   head: () => ({
@@ -130,7 +131,7 @@ export function Achievements() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06, duration: 0.6 }}
-                  className="group flex items-center justify-between gap-6 rounded-2xl border border-white/10 bg-white/[0.02] p-6 backdrop-blur transition hover:border-accent/60 hover:bg-white/[0.04]"
+                  className="group flex items-center justify-between gap-6 rounded-2xl border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.02] p-6 backdrop-blur transition hover:border-accent/60 hover:bg-black/[0.04] dark:hover:bg-white/[0.04]"
                 >
                   <div className="flex items-center gap-5">
                     <Icon className="h-9 w-9 text-foreground transition-colors group-hover:text-accent" />
@@ -183,10 +184,10 @@ export function Achievements() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-black/40 shadow-[0_0_80px_-20px_oklch(0.7_0.22_230_/_0.3)]"
+            className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-black/40 shadow-xl dark:shadow-[0_0_80px_-20px_oklch(0.7_0.22_230_/_0.3)]"
           >
             {/* Browser-like chrome */}
-            <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.03] px-4 py-3">
+            <div className="flex items-center gap-2 border-b border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3">
               <span className="h-2.5 w-2.5 rounded-full bg-red-500/70" />
               <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/70" />
               <span className="h-2.5 w-2.5 rounded-full bg-green-500/70" />
@@ -223,32 +224,20 @@ export function Achievements() {
           <div className="mb-8 text-xs uppercase tracking-[0.3em] text-muted-foreground">
             Skills — Hover to reveal
           </div>
-          <div className="flex flex-wrap gap-4 md:gap-5">
-            {skills.map((s, i) => {
-              const Icon = s.icon;
-              return (
-                <motion.div
-                  key={s.name}
-                  initial={{ opacity: 0, scale: 0.75 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.03, duration: 0.4 }}
-                  whileHover={{ y: -3, scale: 1.03 }}
-                  className="group relative flex h-20 w-20 cursor-pointer items-center justify-center rounded-3xl border border-white/10 bg-white/[0.08] text-center shadow-sm shadow-black/10 transition-all duration-300 hover:border-accent/60 hover:bg-white/[0.08] dark:bg-white/[0.03]"
-                >
-                  <Icon
-                    className="h-10 w-10 transition-transform duration-300"
-                    style={{ color: s.color }}
-                  />
-                  <div className="pointer-events-none absolute inset-0 flex items-center justify-center rounded-3xl bg-black/0 text-center text-[10px] uppercase tracking-[0.2em] text-white opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:bg-black/80">
-                    {s.name}
-                  </div>
-                </motion.div>
-              );
-            })}
+          <div className="overflow-x-auto pb-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <MaskedAvatars
+              avatars={skills.map((skill) => ({
+                name: skill.name,
+                Icon: skill.icon,
+                color: skill.color,
+              }))}
+              size={86}
+              column={50}
+              className="px-3 pt-16"
+            />
           </div>
 
-          <div className="mt-14 rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-sm shadow-black/10 backdrop-blur dark:bg-white/[0.02] md:p-8">
+          <div className="mt-14 rounded-3xl border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.04] p-6 shadow-sm shadow-black/10 backdrop-blur md:p-8">
             <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
               Core Concepts
             </div>
